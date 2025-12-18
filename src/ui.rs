@@ -18,8 +18,6 @@ pub fn draw(f: &mut Frame, app: &App) {
     draw_footer(f, app, chunks[1]);
 }
 
-// src/ui.rs
-
 fn draw_dashboard(f: &mut Frame, app: &App, area: Rect) {
     let columns = Layout::default()
         .direction(Direction::Horizontal)
@@ -30,7 +28,6 @@ fn draw_dashboard(f: &mut Frame, app: &App, area: Rect) {
         ])
         .split(area);
 
-    // 1. Branches Column
     let branches: Vec<ListItem> = app
         .branches
         .iter()
@@ -48,7 +45,6 @@ fn draw_dashboard(f: &mut Frame, app: &App, area: Rect) {
         })
         .collect();
 
-    // CALL THE HELPER FUNCTION HERE
     f.render_widget(
         List::new(branches).block(create_block(
             " Branches ",
@@ -58,7 +54,6 @@ fn draw_dashboard(f: &mut Frame, app: &App, area: Rect) {
         columns[0],
     );
 
-    // 2. Commits Column
     let commits: Vec<ListItem> = app
         .commits
         .iter()
@@ -85,7 +80,6 @@ fn draw_dashboard(f: &mut Frame, app: &App, area: Rect) {
         columns[1],
     );
 
-    // 3. Staged Column
     let staged: Vec<ListItem> = app
         .staged_files
         .iter()

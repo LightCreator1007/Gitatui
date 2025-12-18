@@ -63,21 +63,17 @@ impl App {
     }
 
     fn update_selection(&mut self) {
-        // Only update if we are focusing on branches
         if self.branches.is_empty() {
             return;
         }
 
-        // 1. Get the selected branch string (e.g., "* main" or "  dev")
         let raw_name = &self.branches[self.branch_idx];
 
-        // 2. Clean the name (remove "* " or "  ")
         let clean_name = raw_name.trim_start_matches(|c| c == '*' || c == ' ').trim();
 
-        // 3. Fetch commits for this specific branch
         if let Ok(new_commits) = git_logic::get_commits_from_name(clean_name) {
             self.commits = new_commits;
-            self.commit_idx = 0; // Reset scroll to top
+            self.commit_idx = 0;
         }
     }
 
@@ -85,7 +81,7 @@ impl App {
         match self.current_focus {
             Focus::Branches => {
                 self.branch_idx = self.branch_idx.saturating_sub(1);
-                self.update_selection(); // <--- Trigger Update
+                self.update_selection();
             }
             Focus::Commits => self.commit_idx = self.commit_idx.saturating_sub(1),
             Focus::Staged => self.staged_idx = self.staged_idx.saturating_sub(1),
@@ -97,7 +93,7 @@ impl App {
             Focus::Branches => {
                 if !self.branches.is_empty() && self.branch_idx < self.branches.len() - 1 {
                     self.branch_idx += 1;
-                    self.update_selection(); // <--- Trigger Update
+                    self.update_selection();
                 }
             }
             Focus::Commits => {
