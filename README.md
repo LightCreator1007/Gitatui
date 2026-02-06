@@ -1,10 +1,10 @@
-# Gitatui (gtu) 🦀⚡  
+# Gitatui (gtu)
 **A fast, elegant Git TUI for developers who prefer insight over incantations.**
 
 [![CI](https://img.shields.io/badge/CI-passing-brightgreen)](#)
 [![License](https://img.shields.io/badge/license-MIT-blue)](#)
 
-> Visualize your **branches** and **commit history** side-by-side in a beautiful terminal UI —  
+> Visualize your **branches** and **commit history** side-by-side in a beautiful terminal UI:
 > no shelling out, no lag, no nonsense.
 
 📸  **Preview** 
@@ -39,7 +39,7 @@ Powered by **Libgit2**.
 
 
 ### 🧭 Vim-Style Navigation
-- `h / j / k / l` — because your fingers already know
+- `h / j / k / l` : because your fingers already know
 - Intuitive, user friendly controls
 
 ### 👀 Live Preview (The Star Feature)
@@ -61,7 +61,7 @@ All binaries are available on **GitHub Releases**.
 - Add the binary to your `PATH`
 - Done. No ceremony.
 
-### 🍎 macOS (Apple Silicon – aarch64)
+### 🍎 macOS (Apple Silicon: aarch64)
 
 👉 **Download:**  
 [Download for MacOs](https://github.com/LightCreator1007/Gitatui/releases/download/v0.1.0/gtu-aarch64-apple-darwin.tar.gz)
